@@ -1,0 +1,36 @@
+一、抽象类与抽象方法（abstract）
+	1、抽象类不一定有抽象方法，但是抽象方法一定存在于抽象类中
+	2、抽象类可以有构造方法，但是不能实例化
+	3、一个子类如果继承自一个抽象父类，那么这个子类必须实现抽象父类的所有抽象方法，如果没有则这个子类一定是一个抽象子类
+
+二、接口（interface）
+
+	1、接口中的属性就是常量用 public static final 修饰并且声明的时候一定要初始化
+
+	2、接口中所有的方法都是抽象方法除了 default修饰的方法 以及静态方法（static修饰的） 这两种方法由接口自己的实现类来访问
+
+	3、接口中的一般方法都是用public abstract修饰的
+
+	4、接口中没有构造方法当然也不能被实例化
+
+	5、一个接口可以继承自多个接口
+
+	6、一个类可以继承自另一个类同时实现多个接口 但是类的继承要写在接口的前面
+
+	7、接口主要用来定义规范
+
+
+三、异常类
+
+	1、异常类的父类时throwable类 它有两个子类  一个Error 一个是Exception 其中Exception又有种，一种是编译期的异常 它出现则表示编译不能通过 另外一个是 RunTimeException 在运行中才能体现出来异常
+
+	2、常见的几种异常类：CheckedException：ClassNotFoundException,FileNotFoundException
+RunTimeException：ArrayIndexOutOfBoundsException，ArithmeticException，IllegalArgumentException，NullPointException
+
+	3、处理异常的几种方法：
+		①最懒的方法直接在方法名后面throws 异常名 这种方法可以抛出多个异常 在方法后面用逗号隔开 谁调用这个方法就谁来处理异常 层层上抛知道虚拟机处理
+		②throw new 异常类名（""）字符串中输入当发生这个异常你要提示的内容，相当于new了一个异常类对象，并且初始化他，然后输出初始化的内容。此种方法可以灵活处理 放在判断结构中都行 只要发生异常就可以将异常对象用此种方法抛出并输出提示
+		③try-catch捕获并释放异常类
+
+	4、自定义异常类(定义的时候要继承自Exception)
+		①自定义一个异常类 可用上述的三种方法去实现对你定义的异常的处理

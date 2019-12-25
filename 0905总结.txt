@@ -1,0 +1,33 @@
+						集合
+一、Collection（接口）
+	Collection下的接口实现类储存的数据都是
+
+	1、List（接口）
+
+		三个常用的实现类
+		①Vector
+
+		②ArrayList
+
+		③LinkList
+	
+	2、Set（接口）
+
+		两个常用的实现类
+		①HashSet
+
+		②TreeSet
+
+
+
+二、Map（接口）储存键值对 
+	1、TreeMap<K,V>（底层是红黑二叉树 加上实现Map接口）
+		我们的K为Integer类或者是String时Comparable接口中的方法会帮我们实现对K的排序 从而我们遍历的时候是看到的是以K的升序排列的
+如果想把K设置成我们自己定义的类的类型 则需要在自定义的类中实现Comparable接口 并重写compareTo方法对我们传进来的自定义类对象进行属性的排序。
+	2、HashMap<K,V>（hash表 加上实现Map接口）
+		①允许K，V的值为空  
+		②单线程安全
+	
+	3、HashTable<K,V>
+		①K的值  或者V的值not  Null
+		②多线程安全

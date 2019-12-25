@@ -1,0 +1,43 @@
+					IO流
+一、File 类的基本用法
+	1、创建File类的对象：File file = new File("a");a字符串表示传入你要操作文件的完整路径用反斜杠时注意转义 一般用正斜杆
+	2、一些方法：
+	file.getAbsolutePath();//获得绝对路径包括文件扩展名
+        file.createNewFile();//创建新的文件
+        file.exists();//文件或者文件夹是否存在
+        file.length();//文件的大小
+        file.getName();//获得文件的短命 为 文件名加上后缀名
+        file.getTotalSpace();//获得文件所在磁盘的总空间 返回的是字节数
+        file.getFreeSpace();//获得文件所在磁盘的可用空间 返回的是字节数
+        file.isDirectory();//文件对象是否是文件夹
+        file.isFile();//文件对象是否是文件
+        file.getParent();//获得文件的父目录 返回的是绝对路径减去 文件的段名的字符串
+
+        file.mkdirs();//创建文件对象传入的字符串多级目录
+        String [] s= file.list();//对文件对象如果不是文件夹 则返回一个null String类的数组 是文件夹则返回String类的数组将该文件夹下所有文件及文件夹存入
+        File [] f= file.listFiles();//对文件对象进行遍历 讲过该文件目录下的所有文件及文件夹 返回File类的一个数组存起来
+
+二、FileInputStream与FileOutputStream 类(文件输入输出字节流)
+	1、对象构建它有两个构造方法：
+		①FileInputStream fileInputStream = new FileInputStream(file);//传入File对象
+        		
+		②FileOutputStream fileOutputStream = new FileOutputStream("C:/a");//传入路径
+	2、其中输入流读取文件到字节数组中   而输出流则是写入字节数组到文件中
+	3、写完之后记得要关闭流
+
+
+
+
+三、FileReader与FileWriter类（文件输入输出字节流）
+        //新建一个字符流输入对象
+        FileReader fileReader = new FileReader("c:aaa.txt");
+        //将文件读取到字符数组中
+        char[] chars = new char[(int) file.length()];
+        fileReader.read(chars);
+	//新建一个字符流输出对象
+        FileWriter fileWriter = new FileWriter("C:bbb.txt");
+        //将字符数组写入字符流输出对象
+        fileWriter.write(chars);
+        //关闭流
+        fileReader.close();
+        fileWriter.close();

@@ -1,0 +1,34 @@
+					日期类与日历
+一、日期类的一些方法
+
+	1、Date  date  =new Date();产生一个日期对象 保存当前的时间日期 直接打印日期的时候输出的也是当前的时间与日期与星期
+
+	2、date.get  后面加year  month day   dayofweek  dayofmonth ...可以返回当前日期的对应的属性但是年要-1900  月是0-11 对应 January-December   星期日为1 星期六为7  
+
+	
+二、日历类
+
+	1、日历类的对象获取方式：
+		Calendar calendar= Calendar.getInstance();
+
+	2、日历类的一些方法
+在实际的应用中日历类的一些方法由很多：set  add   get  
+
+
+三、格式化日历类
+	1、对象的获取方法：
+		SimpleDateFormat simpleDateFormat =new SimpleDateFormat("yyyy-MM-dd E");
+	
+	2、方法：
+		①用格式化日历对象去调用 他的format方法 传入一个日期对象 返回的是一个new对象的时候格式化的字符串形式
+		②用格式化日历对象去调用 他的parseformat方法时 传入一个格式化的字符串 返回的是一个日期对象
+	
+
+四、Math类
+	直接撸方法：abs取绝对值	pow(a,b)a的b次幂   sqrt()开方   round（）四舍五入取整（加上0.5后取整数部分）   min   max   sin  asin  最大值最小值  三角函 反三角函数  random  取零到一的一个随机小数   ceil 向上取整   floor 向下取整
+		
+
+五、Random类（随机类数）
+	1、对象：Random  random=new Random();
+	2、方法：random.nextInt(a);传入参数表示生成从0到a的一个左闭右开区间的随机整数
+	3、例子：想获得从50到80之间的随机整数：random.nextInt(30)+50
