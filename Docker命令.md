@@ -37,5 +37,9 @@ docker inspect 容器名称											//查看容器的ip地址
 docker rm 容器id（或者容器的名称）									//删除指定容器
 
 docker rm `docker pa -a`										//删除所有的容器
+
+docker run -it --name=命名容器 -p 宿主机端口:容器对应端口 -e MYSQL_ROOT_PASSWORD=123 镜像id(镜像名称:版本)
+//例如
+docker run -it --name=mysql_01 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123 centos/mysql-57-centos7
 ```
 
