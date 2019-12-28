@@ -113,6 +113,15 @@ cp /usr/local/a.txt  /usr/soft/b.txt
 cp -r /usr/local/a.txt  /usr/soft/test	
 ```
 
+### 2.6 文件的解压
+
+```shell
+#将制定压缩文件解压到制定目录
+tar zxf 压缩文件 -C 目录
+#例如
+
+```
+
 
 
 ## 3.目录操作
